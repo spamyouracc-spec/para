@@ -6,17 +6,17 @@ choice(name: 'ENVIRONMENT', choices:['dev','staging', 'prod'],description: 'Sele
 stages{
 stage('Checkout') {
 steps{
-gitbranch: 'main', url: 'https://github.com/<student-username>/<repo-name>.git'
+gitbranch: 'main', url: 'https://github.com/spamyouracc-spec/para.git'
 }
 }
 stage('ShowParameter'){
 steps{
-echo "Selectedenvironment: ${params.ENVIRONMENT}"
+bat "Selectedenvironment: ${params.ENVIRONMENT}"
 }
 }
 stage('BuildforEnvironment') {
 steps{
-echo "Buildingthe applicationforthe ${params.ENVIRONMENT} environment..."
+bat "Buildingthe applicationforthe ${params.ENVIRONMENT} environment..."
 }
 }
 }
